@@ -3,21 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fausty Pay - Fast & Secure Mobile Money Payments</title>
-  <meta name="description" content="Fausty Pay makes mobile money payments fast, easy, and secure across all networks. Send money instantly with our simple payment platform.">
+  <title>Fausty Pay - Fast & Secure Payments</title>
+  <meta name="description" content="Fausty Pay makes mobile money payments fast, easy, and secure across all networks.">
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',Arial,sans-serif;color:#1a1a2e;background:#fffdf5;line-height:1.6}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:'Inter',Arial,sans-serif}/* NAVBAR */.navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.06)}.navbar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:16px 24px}.nav-logo{font-size:26px;font-weight:800;color:#fdbf00;letter-spacing:-.5px}.nav-logo span{color:#1a1a2e}.nav-links{display:flex;gap:28px;list-style:none;align-items:center}.nav-links a{font-weight:500;font-size:15px;transition:.2s}.nav-links a:hover{color:#d4a000}.nav-cta{background:linear-gradient(135deg,#fdbf00,#ffcc33);color:#1a1a2e!important;padding:10px 22px;border-radius:10px;font-weight:700!important;transition:.2s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(253,191,0,.4)}.hamburger{display:none;background:none;border:none;font-size:24px;color:#1a1a2e}.hero{padding:140px 24px 80px;text-align:center;background:linear-gradient(135deg,#fffdf5 0%,#fff8e1 50%,#fff4cc 100%)}.hero-badge{display:inline-block;background:rgba(253,191,0,.15);color:#b38600;padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:20px}.hero h1{font-size:48px;font-weight:800;line-height:1.15;margin-bottom:18px;color:#1a1a2e}.hero h1 .highlight{color:#d4a000}.hero p{font-size:18px;color:#666;max-width:550px;margin:0 auto 30px}.hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#fdbf00,#e6ac00);color:#1a1a2e;border-radius:12px;font-weight:700;font-size:16px;transition:.2s;border:none}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(253,191,0,.35)}.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:white;color:#1a1a2e;border-radius:12px;font-weight:700;font-size:16px;border:2px solid #e0e0e0;transition:.2s}.btn-secondary:hover{border-color:#fdbf00;transform:translateY(-2px)}.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:50px;flex-wrap:wrap}.hero-stat{text-align:center}.hero-stat .number{font-size:32px;font-weight:800;color:#d4a000}.hero-stat .label{font-size:14px;color:#888}.section{padding:80px 24px}.section-header{text-align:center;margin-bottom:50px}.section-header h2{font-size:36px;font-weight:800;margin-bottom:12px}.section-header p{font-size:17px;color:#777;max-width:550px;margin:0 auto}.container{max-width:1100px;margin:0 auto}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}.service-card{background:#fffdf5;padding:36px 28px;border-radius:18px;border:1px solid #f0ead6;transition:.3s}.service-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(0,0,0,.08)}.service-icon{width:56px;height:56px;background:linear-gradient(135deg,#fdbf00,#ffcc33);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}.service-card h3{font-size:20px;font-weight:700;margin-bottom:10px}.service-card p{color:#777;font-size:15px;line-height:1.6}.payment-section{background:linear-gradient(135deg,#fffdf5,#fff4cc)}.payment-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;max-width:900px;margin:0 auto}.payment-card{background:white;padding:36px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.1)}.payment-card h3{font-size:22px;font-weight:700;margin-bottom:6px}.payment-card .subtitle{color:#888;font-size:14px;margin-bottom:24px}.payment-card label{font-weight:600;font-size:14px;color:#555;display:block;margin-bottom:6px;text-align:left}.payment-card input{width:100%;padding:14px 16px;font-size:16px;border-radius:10px;border:1.5px solid #e0e0e0;margin-bottom:16px}.recipient-display{background:#fffdf5;border:1.5px solid #f0ead6;border-radius:12px;padding:16px;margin-bottom:20px;display:flex;align-items:center;gap:12px}.recipient-avatar{width:44px;height:44px;background:linear-gradient(135deg,#fdbf00,#ffcc33);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}.recipient-info{text-align:left}.recipient-info .name{font-weight:700;font-size:15px}.recipient-info .number{color:#888;font-size:14px}.pay-btn{display:block;width:100%;padding:16px;background:linear-gradient(135deg,#fdbf00,#e6ac00);color:#1a1a2e;border:none;border-radius:12px;font-size:18px;font-weight:700;text-align:center;margin-bottom:12px}.pay-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(253,191,0,.35)}.network-btn{display:inline-block;margin:6px;padding:12px 18px;background:linear-gradient(135deg,#fff7e0,#ffdd55);border-radius:12px;color:#1a1a2e;font-weight:700;transition:.2s}.network-btn:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(253,191,0,.3)}.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:2000;justify-content:center;align-items:center}.modal-overlay.active{display:flex}.receipt{background:white;border-radius:20px;padding:40px 36px;max-width:400px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative}.receipt-icon{width:64px;height:64px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;color:#4caf50}.receipt h3{font-size:22px;font-weight:700;margin-bottom:4px}.receipt .receipt-subtitle{color:#888;font-size:14px;margin-bottom:24px}.receipt-details{text-align:left;background:#f9f9f9;border-radius:12px;padding:18px;margin-bottom:24px}.receipt-row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px}.receipt-row:not(:last-child){border-bottom:1px solid #eee}.receipt-row .receipt-label{color:#888}.receipt-row .receipt-value{font-weight:600}.receipt-total{font-size:28px;font-weight:800;color:#d4a000;margin-bottom:20px}.receipt-close{background:#f0f0f0;border:none;padding:12px 30px;border-radius:10px;font-weight:600;cursor:pointer;font-size:15px;transition:.2s}.receipt-close:hover{background:#e0e0e0}@media(max-width:900px){.payment-wrapper{grid-template-columns:1fr}}@media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:white;padding:20px;gap:16px}.nav-links.active{display:flex}.hamburger{display:block}.hero h1{font-size:32px}.hero p{font-size:16px}.hero-stats{gap:30px}.section-header h2{font-size:28px}}@media(max-width:480px){.hero h1{font-size:26px}.hero-stat .number{font-size:26px}.hero-stats{gap:20px}.payment-card{padding:24px 20px}}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    html {scroll-behavior: smooth;}
+    body {font-family:'Inter', Arial, sans-serif; background:#fffdf5; color:#1a1a2e; line-height:1.6;}
+
+    .navbar {position:fixed; top:0; width:100%; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); z-index:1000; box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+    .navbar-inner {max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:16px 24px;}
+    .nav-logo {font-size:26px; font-weight:800; color:#fdbf00; text-decoration:none; letter-spacing:-0.5px;}
+    .nav-logo span {color:#1a1a2e;}
+    .nav-links {display:flex; gap:28px; list-style:none; align-items:center;}
+    .nav-links a {text-decoration:none; color:#555; font-weight:500; font-size:15px; transition:color 0.2s;}
+    .nav-links a:hover {color:#d4a000;}
+    .nav-cta {background:linear-gradient(135deg,#fdbf00,#ffcc33); color:#1a1a2e !important; padding:10px 22px; border-radius:10px; font-weight:700 !important; transition:transform 0.2s,box-shadow 0.2s;}
+    .nav-cta:hover {transform:translateY(-1px); box-shadow:0 4px 15px rgba(253,191,0,0.4);}
+    .hamburger {display:none; background:none; border:none; font-size:24px; cursor:pointer; color:#1a1a2e;}
+
+    .hero {padding:140px 24px 80px; text-align:center; background:linear-gradient(135deg,#fffdf5 0%,#fff8e1 50%,#fff4cc 100%);}
+    .hero-badge {display:inline-block; background:rgba(253,191,0,0.15); color:#b38600; padding:6px 16px; border-radius:20px; font-size:14px; font-weight:600; margin-bottom:20px;}
+    .hero h1 {font-size:48px; font-weight:800; line-height:1.15; margin-bottom:18px; color:#1a1a2e;}
+    .hero h1 .highlight {color:#d4a000;}
+    .hero p {font-size:18px; color:#666; max-width:550px; margin:0 auto 30px;}
+    .hero-buttons {display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+    .btn-primary {display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:linear-gradient(135deg,#fdbf00,#e6ac00); color:#1a1a2e; text-decoration:none; border-radius:12px; font-weight:700; font-size:16px; transition:transform 0.2s, box-shadow 0.2s; border:none; cursor:pointer;}
+    .btn-primary:hover {transform:translateY(-2px); box-shadow:0 8px 25px rgba(253,191,0,0.35);}
+    .btn-secondary {display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:white; color:#1a1a2e; text-decoration:none; border-radius:12px; font-weight:700; font-size:16px; border:2px solid #e0e0e0; transition:border-color 0.2s, transform 0.2s; cursor:pointer;}
+    .btn-secondary:hover {border-color:#fdbf00; transform:translateY(-2px);}
+    .hero-stats {display:flex; justify-content:center; gap:48px; margin-top:50px; flex-wrap:wrap;}
+    .hero-stat {text-align:center;}
+    .hero-stat .number {font-size:32px; font-weight:800; color:#d4a000;}
+    .hero-stat .label {font-size:14px; color:#888; margin-top:2px;}
+
+    .section {padding:80px 24px;}
+    .section-header {text-align:center; margin-bottom:50px;}
+    .section-header h2 {font-size:36px; font-weight:800; margin-bottom:12px;}
+    .section-header p {font-size:17px; color:#777; max-width:550px; margin:0 auto;}
+    .container {max-width:1100px; margin:0 auto;}
+
+    .services-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;}
+    .service-card {background:#fffdf5; padding:36px 28px; border-radius:18px; border:1px solid #f0ead6; transition:transform 0.3s, box-shadow 0.3s;}
+    .service-card:hover {transform:translateY(-6px); box-shadow:0 12px 35px rgba(0,0,0,0.08);}
+    .service-icon {width:56px; height:56px; background:linear-gradient(135deg,#fdbf00,#ffcc33); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:18px;}
+    .service-card h3 {font-size:20px; font-weight:700; margin-bottom:10px;}
+    .service-card p {color:#777; font-size:15px; line-height:1.6;}
+
+    /* ===== PAYMENT SECTION ===== */
+    .payment-section {background:linear-gradient(135deg,#fffdf5,#fff4cc);}
+    .payment-wrapper {display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; max-width:900px; margin:0 auto;}
+    .payment-card {background:white; padding:36px; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.1);}
+    .payment-card h3 {font-size:22px; font-weight:700; margin-bottom:6px;}
+    .payment-card .subtitle {color:#888; font-size:14px; margin-bottom:24px;}
+    .recipient-display {background:#fffdf5; border:1.5px solid #f0ead6; border-radius:12px; padding:16px; margin-bottom:20px; display:flex; align-items:center; gap:12px;}
+    .recipient-avatar {width:44px; height:44px; background:linear-gradient(135deg,#fdbf00,#ffcc33); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px;}
+    .recipient-info .name {font-weight:700; font-size:15px;}
+    .recipient-info .number {color:#888; font-size:14px;}
+    .pay-btn {display:block; width:100%; padding:16px; background:linear-gradient(135deg,#fdbf00,#e6ac00); color:#1a1a2e; border:none; border-radius:12px; font-size:18px; font-weight:700; cursor:pointer; text-align:center; margin-bottom:14px; text-decoration:none;}
+    .pay-btn:hover {transform:translateY(-2px); box-shadow:0 6px 20px rgba(253,191,0,0.35);}
+    
+    .network-btn {display:block; width:100%; padding:14px; margin:6px 0; border-radius:10px; background:linear-gradient(135deg,#fdbf00,#ffcc33); color:#1a1a2e; text-decoration:none; text-align:center; font-weight:700; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s;}
+    .network-btn:hover {transform:translateY(-1px); box-shadow:0 4px 15px rgba(253,191,0,0.4);}
+
+    /* Footer */
+    footer {text-align:center; padding:20px 0; color:#555; font-size:14px; background:linear-gradient(135deg,#fff8e1,#fffdf5); margin-top:50px; border-top:1px solid #f0ead6;}
+    footer strong {color:#d4a000;}
+
+    /* Responsive */
+    @media(max-width:900px){.payment-wrapper{grid-template-columns:1fr;}}
+    @media(max-width:768px){.nav-links{display:none; flex-direction:column; position:absolute; top:100%; left:0; width:100%; background:white; padding:20px; gap:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+      .nav-links.active{display:flex;}
+      .hamburger{display:block;}}
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="navbar-inner">
       <a href="#" class="nav-logo">Fausty<span>Pay</span></a>
@@ -33,62 +100,32 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-badge"><i class="fas fa-bolt"></i> Fast & Secure Payments</div>
-    <h1>Send Money <span class="highlight">Instantly</span><br>Across All Networks</h1>
-    <p>Fausty Pay makes mobile money payments simple, fast, and secure. Works with MTN, AirtelTigo, and Vodafone.</p>
+    <h1>Send Money <span class="highlight">Across All Networks</span></h1>
+    <p>Fausty Pay works on MTN, AirtelTigo, and Vodafone. Pay instantly via USSD or scan a QR code.</p>
     <div class="hero-buttons">
       <a href="#payment" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Money Now</a>
       <a href="#services" class="btn-secondary"><i class="fas fa-info-circle"></i> Learn More</a>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Services</h2>
-        <p>Everything you need for seamless mobile money transactions in one place.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-paper-plane"></i></div>
-          <h3>Instant Transfers</h3>
-          <p>Send money instantly to any network in Ghana.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-qrcode"></i></div>
-          <h3>QR Code Payments</h3>
-          <p>Scan or share QR codes for fast payments across networks.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Secure & Trusted</h3>
-          <p>All payments go through official network APIs for security.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-receipt"></i></div>
-          <h3>Instant Receipts</h3>
-          <p>Get a digital receipt immediately after payment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAYMENT SECTION -->
+  <!-- ===== PAYMENT SECTION ===== -->
   <section class="section payment-section" id="payment">
     <div class="container">
       <div class="section-header">
         <h2>Make a Payment</h2>
-        <p>Send money securely to MTN, AirtelTigo, or Vodafone using Fausty Pay.</p>
+        <p>Select your network and pay securely via USSD or QR Code.</p>
       </div>
 
       <div class="payment-wrapper">
-        <!-- PAYMENT FORM -->
         <div class="payment-card">
-          <h3>Send Payment</h3>
-          <p class="subtitle">Choose your network and amount</p>
+          <h3>Choose Network</h3>
+
+          <a class="network-btn" href="#" onclick="openPayment('mtn')"><i class="fas fa-mobile-alt"></i> MTN</a>
+          <a class="network-btn" href="#" onclick="openPayment('airteltigo')"><i class="fas fa-mobile-alt"></i> AirtelTigo</a>
+          <a class="network-btn" href="#" onclick="openPayment('vodafone')"><i class="fas fa-mobile-alt"></i> Vodafone</a>
 
           <label for="senderName">Your Name</label>
           <input type="text" id="senderName" placeholder="Enter your name">
@@ -97,60 +134,53 @@
           <input type="number" id="amountInput" placeholder="Enter amount" min="1">
 
           <label for="purposeInput">Purpose (optional)</label>
-          <input type="text" id="purposeInput" placeholder="Payment purpose">
+          <input type="text" id="purposeInput" placeholder="e.g. Payment for goods">
 
-          <p style="font-size:14px;color:#d4a000;font-weight:600;margin-bottom:10px;">Choose Network:</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <a class="network-btn" href="#" onclick="openPayment('mtn')"><i class="fas fa-mobile-alt"></i> MTN</a>
-            <a class="network-btn" href="#" onclick="openPayment('airteltigo')"><i class="fas fa-mobile-alt"></i> AirtelTigo</a>
-            <a class="network-btn" href="#" onclick="openPayment('vodafone')"><i class="fas fa-mobile-alt"></i> Vodafone</a>
-          </div>
-
-          <div style="text-align:center;margin-top:14px;">
-            <button onclick="generateReceipt()" style="background:none;border:none;color:#d4a000;font-weight:600;font-size:14px;">
-              <i class="fas fa-receipt"></i> Generate Receipt
-            </button>
-          </div>
+          <button class="pay-btn" onclick="generateReceipt()"><i class="fas fa-receipt"></i> Generate Receipt</button>
         </div>
 
-        <!-- PAYMENT STEPS + QR -->
         <div class="payment-info">
-          <h3>How to Pay</h3>
-          <ul class="payment-steps">
-            <li>
-              <div class="step-number">1</div>
-              <div class="step-content"><h4>Select Network</h4><p>Choose MTN, AirtelTigo, or Vodafone from above buttons.</p></div>
-            </li>
-            <li>
-              <div class="step-number">2</div>
-              <div class="step-content"><h4>Open Payment Link</h4><p>The button will open your network's official payment page or app.</p></div>
-            </li>
-            <li>
-              <div class="step-number">3</div>
-              <div class="step-content"><h4>Enter Amount</h4><p>Fill in the amount and complete payment securely.</p></div>
-            </li>
-            <li>
-              <div class="step-number">4</div>
-              <div class="step-content"><h4>Confirm & Pay</h4><p>Follow the app prompts and get an instant receipt.</p></div>
-            </li>
-          </ul>
-          <div class="qr-section">
-            <p><i class="fas fa-qrcode"></i> Scan to Pay</p>
-            <div id="dynamicQR"></div>
-          </div>
+          <h3>Scan & Pay</h3>
+          <div id="dynamicQR" style="text-align:center;"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RECEIPT MODAL -->
-  <div class="modal-overlay" id="receiptModal">
-    <div class="receipt">
-      <div class="receipt-icon"><i class="fas fa-check"></i></div>
-      <h3>Payment Receipt</h3>
-      <p class="receipt-subtitle">Transaction reference generated</p>
-      <div class="receipt-total" id="receiptAmount">GHC 0.00</div>
-      <div class="receipt-details">
-        <div class="receipt-row"><span class="receipt-label">Recipient</span><span class="receipt-value">Fausty Pay</span></div>
-        <div class="receipt-row"><span class="receipt-label">Sender</span><span class="receipt-value" id="receiptSender">-</span></div>
-        <div class="receipt-row"><span class="receipt-label">Purpose</span><
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2026 Fausty Pay. Developed by <strong>Otuel Nyarko Emmanuel</strong>.
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    function openPayment(network) {
+      let ussdCode = '';
+      let fallbackLink = '';
+      switch(network){
+        case 'mtn': ussdCode='*170#'; fallbackLink='https://www.mtn.com.gh/momo'; break;
+        case 'airteltigo': ussdCode='*110#'; fallbackLink='https://www.airteltigo.com.gh/mobile-money'; break;
+        case 'vodafone': ussdCode='*110#'; fallbackLink='https://vodafone.com.gh/vodafone-cash'; break;
+      }
+      window.location.href = `tel:${ussdCode}`;
+      setTimeout(()=>{
+        if(!navigator.userAgent.match(/Mobile|iPhone|Android/)){
+          window.open(fallbackLink,'_blank');
+        }
+      },2000);
+    }
+
+    function generateReceipt() {
+      const sender = document.getElementById('senderName').value || '-';
+      const amount = document.getElementById('amountInput').value || '0.00';
+      const purpose = document.getElementById('purposeInput').value || '-';
+      alert(`Receipt Generated!\nSender: ${sender}\nAmount: GHC ${amount}\nPurpose: ${purpose}`);
+    }
+  </script>
+</body>
+</html>
