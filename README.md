@@ -1,2 +1,2 @@
 # fausty-pay
-person mobile payment platform
+ mobile money payment platform for all customers
