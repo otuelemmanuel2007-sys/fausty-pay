@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fausty Pay - Fast & Secure MTN MoMo Payments</title>
+  <meta name="description" content="Fausty Pay makes MTN Mobile Money payments fast, easy, and secure. Send money instantly with our simple payment platform.">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1a1a2e;
+      background: #fffdf5;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s;
+    }
+
+    .navbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+
+    .nav-logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fdbf00;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: #1a1a2e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4a000;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      color: #1a1a2e !important;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 700 !important;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(253,191,0,0.4);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #1a1a2e;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: linear-gradient(135deg, #fffdf5 0%, #fff8e1 50%, #fff4cc 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(253, 191, 0, 0.15);
+      color: #b38600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #1a1a2e;
+    }
+
+    .hero h1 .highlight {
+      color: #d4a000;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      max-width: 550px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #fdbf00, #e6ac00);
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(253,191,0,0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: white;
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid #e0e0e0;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: #fdbf00;
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #d4a000;
+    }
+
+    .hero-stat .label {
+      font-size: 14px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* ===== SECTION UTILITIES ===== */
+    .section {
+      padding: 80px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      font-size: 17px;
+      color: #777;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      background: #fff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: #fffdf5;
+      padding: 36px 28px;
+      border-radius: 18px;
+      border: 1px solid #f0ead6;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ===== PAYMENT SECTION ===== */
+    .payment-section {
+      background: linear-gradient(135deg, #fffdf5, #fff4cc);
+    }
+
+    .payment-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .payment-card {
+      background: white;
+      padding: 36px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .payment-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .payment-card .subtitle {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .payment-card label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #555;
+      display: block;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .payment-card input,
+    .payment-card input[type="text"],
+    .payment-card input[type="number"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1.5px solid #e0e0e0;
+      text-align: left;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+
+    .payment-card input:focus {
+      outline: none;
+      border-color: #fdbf00;
+      box-shadow: 0 0 0 3px rgba(253,191,0,0.15);
+    }
+
+    .recipient-display {
+      background: #fffdf5;
+      border: 1.5px solid #f0ead6;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .recipient-avatar {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .recipient-info {
+      text-align: left;
+    }
+
+    .recipient-info .name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .recipient-info .number {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .pay-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #fdbf00, #e6ac00);
+      color: #1a1a2e;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Inter', Arial, sans-serif;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .pay-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253,191,0,0.35);
+    }
+
+    .payment-info {
+      padding-top: 10px;
+    }
+
+    .payment-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .payment-steps {
+      list-style: none;
+    }
+
+    .payment-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .step-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .qr-section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 24px;
+      border: 1px solid #f0ead6;
+    }
+
+    .qr-section p {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    #dynamicQR {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ===== RECEIPT MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .receipt {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 36px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .receipt-icon {
+      width: 64px;
+      height: 64px;
+      background: #e8f5e9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+      color: #4caf50;
+    }
+
+    .receipt h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .receipt .receipt-subtitle {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .receipt-details {
+      text-align: left;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .receipt-row:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+    .receipt-row .receipt-label {
+      color: #888;
+    }
+
+    .receipt-row .receipt-value {
+      font-weight: 600;
+    }
+
+    .receipt-total {
+      font-size: 28px;
+      font-weight: 800;
+      color: #d4a000;
+      margin-bottom: 20px;
+    }
+
+    .receipt-close {
+      background: #f0f0f0;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: background 0.2s;
+    }
+
+    .receipt-close:hover {
+      background: #e0e0e0;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .about-features {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .about-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .about-features li i {
+      color: #4caf50;
+      font-size: 18px;
+      width: 22px;
+    }
+
+    .about-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-stat-card {
+      background: #fffdf5;
+      border: 1px solid #f0ead6;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .about-stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .about-stat-card i {
+      font-size: 28px;
+      color: #d4a000;
+      margin-bottom: 10px;
+    }
+
+    .about-stat-card .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      display: block;
+    }
+
+    .about-stat-card .stat-label {
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: linear-gradient(135deg, #fffdf5, #fff8e1);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 32px 28px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .testimonial-stars {
+      color: #fdbf00;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: #1a1a2e;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .testimonial-role {
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* ===== FAQ SECTION ===== */
+    .faq {
+      background: #fff;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid #f0ead6;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: #fffdf5;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1a1a2e;
+    }
+
+    .faq-question i {
+      transition: transform 0.3s;
+      color: #d4a000;
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 24px 20px;
+    }
+
+    .faq-answer p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+      background: linear-gradient(135deg, #fffdf5, #fff4cc);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-info h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .contact-info > p {
+      color: #777;
+      margin-bottom: 28px;
+      font-size: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: linear-gradient(135deg, #fdbf00, #ffcc33);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .contact-item-text {
+      text-align: left;
+    }
+
+    .contact-item-text .contact-label {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .contact-item-text .contact-value {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #fdbf00;
+      box-shadow: 0 0 0 3px rgba(253,191,0,0.15);
+    }
+
+    .form-submit {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #fdbf00, #e6ac00);
+      color: #1a1a2e;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', Arial, sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253,191,0,0.35);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-success.active {
+      display: block;
+    }
+
+    .form-success i {
+      font-size: 40px;
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+
+    .form-success p {
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1a1a2e;
+      color: white;
+      padding: 60px 24px 30px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fdbf00;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: #fdbf00;
+      color: #1a1a2e;
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul a {
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-column ul a:hover {
+      color: #fdbf00;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-bottom p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-bottom .dev-credit {
+      color: #999;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .payment-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        gap: 16px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-stats {
+        gap: 30px;
+      }
+
+      .section-header h2 {
+        font-size: 28px;
+      }
+
+      .about-content h2 {
+        font-size: 28px;
+      }
+
+      .about-visual {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .hero-stat .number {
+        font-size: 26px;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+
+      .payment-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">Fausty<span>Pay</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#payment">Pay Now</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#payment" class="nav-cta">Send Money</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-badge"><i class="fas fa-bolt"></i> Fast & Secure MoMo Payments</div>
+    <h1>Send Money <span class="highlight">Instantly</span><br>with MTN MoMo</h1>
+    <p>Fausty Pay makes mobile money payments simple, fast, and secure. Pay for goods and services with just a few taps.</p>
+    <div class="hero-buttons">
+      <a href="#payment" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Money Now</a>
+      <a href="#services" class="btn-secondary"><i class="fas fa-info-circle"></i> Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">500+</div>
+        <div class="label">Transactions</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">99.9%</div>
+        <div class="label">Uptime</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">24/7</div>
+        <div class="label">Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Everything you need for seamless mobile money transactions in one place.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>Instant Transfers</h3>
+          <p>Send money to any MTN MoMo number instantly. No waiting, no delays - your payments arrive in seconds.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-qrcode"></i></div>
+          <h3>QR Code Payments</h3>
+          <p>Generate and scan QR codes for quick payments. Share your payment code with anyone, anywhere.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Secure Payments</h3>
+          <p>Every transaction is protected with MTN's trusted Mobile Money security infrastructure.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-receipt"></i></div>
+          <h3>Payment Receipts</h3>
+          <p>Get instant digital receipts for every transaction. Keep track of your payment history effortlessly.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-link"></i></div>
+          <h3>Payment Links</h3>
+          <p>Create shareable payment links with pre-filled amounts. Perfect for businesses collecting payments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is available around the clock to assist with any payment queries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENT SECTION ===== -->
+  <section class="section payment-section" id="payment">
+    <div class="container">
+      <div class="section-header">
+        <h2>Make a Payment</h2>
+        <p>Send money securely using MTN Mobile Money. It only takes a few seconds.</p>
+      </div>
+      <div class="payment-wrapper">
+        <div class="payment-card">
+          <h3>Send Payment</h3>
+          <p class="subtitle">Pay via MTN MoMo</p>
+
+          <div class="recipient-display">
+            <div class="recipient-avatar">FP</div>
+            <div class="recipient-info">
+              <div class="name">Fausty Pay</div>
+              <div class="number">0257704506</div>
+            </div>
+          </div>
+
+          <label for="senderName">Your Name</label>
+          <input type="text" id="senderName" placeholder="Enter your name">
+
+          <label for="amountInput">Amount (GHC)</label>
+          <input type="number" id="amountInput" placeholder="Enter amount" min="1">
+
+          <label for="purposeInput">Purpose (optional)</label>
+          <input type="text" id="purposeInput" placeholder="e.g. Payment for goods">
+
+          <a class="pay-btn" href="tel:*170#" id="payBtn"><i class="fas fa-mobile-alt"></i> Open MoMo to Pay</a>
+
+          <div style="text-align: center; margin-top: 14px;">
+            <button onclick="generateReceipt()" style="background: none; border: none; color: #d4a000; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px;">
+              <i class="fas fa-receipt"></i> Generate Receipt
+            </button>
+          </div>
+        </div>
+
+        <div class="payment-info">
+          <h3>How to Pay</h3>
+          <ul class="payment-steps">
+            <li>
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Open MoMo App</h4>
+                <p>Dial *170# or tap the button to launch MTN MoMo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Select Send Money</h4>
+                <p>Choose "Transfer Money" then "Send Money" from the menu.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Enter Details</h4>
+                <p>Enter the number <strong>0257704506</strong> and the amount.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Confirm & Pay</h4>
+                <p>Review the details and enter your MoMo PIN to complete.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="qr-section">
+            <p><i class="fas fa-qrcode"></i> Scan to Pay</p>
+            <div id="dynamicQR"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECEIPT MODAL ===== -->
+  <div class="modal-overlay" id="receiptModal">
+    <div class="receipt">
+      <div class="receipt-icon"><i class="fas fa-check"></i></div>
+      <h3>Payment Receipt</h3>
+      <p class="receipt-subtitle">Transaction reference generated</p>
+      <div class="receipt-total" id="receiptAmount">GHC 0.00</div>
+      <div class="receipt-details">
+        <div class="receipt-row">
+          <span class="receipt-label">Recipient</span>
+          <span class="receipt-value">Fausty Pay</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Number</span>
+          <span class="receipt-value">0257704506</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Sender</span>
+          <span class="receipt-value" id="receiptSender">-</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Purpose</span>
+          <span class="receipt-value" id="receiptPurpose">-</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Reference</span>
+          <span class="receipt-value" id="receiptRef">-</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Date</span>
+          <span class="receipt-value" id="receiptDate">-</span>
+        </div>
+      </div>
+      <button class="receipt-close" onclick="closeReceipt()">Close</button>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>About Fausty Pay</h2>
+          <p>Fausty Pay is a trusted payment solution built for fast and secure MTN Mobile Money transactions in Ghana. We simplify the way you send and receive money.</p>
+          <p>Whether you're paying for goods, services, or sending money to loved ones, Fausty Pay provides a seamless experience you can rely on.</p>
+          <ul class="about-features">
+            <li><i class="fas fa-check-circle"></i> No hidden fees or charges</li>
+            <li><i class="fas fa-check-circle"></i> Works on all MTN MoMo accounts</li>
+            <li><i class="fas fa-check-circle"></i> Instant payment confirmation</li>
+            <li><i class="fas fa-check-circle"></i> QR code support for easy sharing</li>
+            <li><i class="fas fa-check-circle"></i> Digital receipts for record keeping</li>
+          </ul>
+        </div>
+        <div class="about-visual">
+          <div class="about-stat-card">
+            <i class="fas fa-users"></i>
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="about-stat-card">
+            <i class="fas fa-exchange-alt"></i>
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Transactions</span>
+          </div>
+          <div class="about-stat-card">
+            <i class="fas fa-star"></i>
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">User Rating</span>
+          </div>
+          <div class="about-stat-card">
+            <i class="fas fa-clock"></i>
+            <span class="stat-number">&lt;5s</span>
+            <span class="stat-label">Avg. Processing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Customers Say</h2>
+        <p>Hear from people who trust Fausty Pay for their mobile money transactions.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"Fausty Pay makes it so easy to send money. I just scan the QR code and I'm done. Very fast and reliable!"</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AK</div>
+            <div>
+              <div class="testimonial-name">Ama Konadu</div>
+              <div class="testimonial-role">Market Trader, Kumasi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"I use Fausty Pay for my small business. Customers can pay me instantly and I get a receipt every time. Very professional."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">KM</div>
+            <div>
+              <div class="testimonial-name">Kwame Mensah</div>
+              <div class="testimonial-role">Business Owner, Accra</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"The payment link feature is amazing. I just share the link and my clients can pay me directly. No more chasing payments!"</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EA</div>
+            <div>
+              <div class="testimonial-name">Efua Asante</div>
+              <div class="testimonial-role">Freelancer, Takoradi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Got questions? Here are answers to the most common ones.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How do I make a payment with Fausty Pay?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Simply scroll to the "Make a Payment" section, enter the amount, and tap "Open MoMo to Pay." Follow the MoMo prompts to complete your transaction using the number 0257704506.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Is Fausty Pay safe and secure?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. All transactions are processed through MTN's secure Mobile Money platform. Fausty Pay does not store your MoMo PIN or sensitive financial information.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What are the fees for using Fausty Pay?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Fausty Pay does not charge any extra fees. Standard MTN MoMo transfer charges apply as per MTN's tariff schedule.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Can I get a receipt for my payment?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! After entering your payment details, click the "Generate Receipt" button to get a digital receipt with a unique reference number for your records.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What networks are supported?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Fausty Pay currently supports MTN Mobile Money (MoMo). Support for other mobile money networks may be added in the future.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Can I use Fausty Pay for my business?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Fausty Pay is designed for both personal and business use. You can share payment links or the QR code with your customers for easy payment collection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Have questions or need help? Reach out to us anytime.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>We're here to help with any questions about payments, services, or partnerships.</p>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-item-text">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">0257704506</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-text">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">support@faustypay.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-item-text">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Ghana</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-item-text">
+              <div class="contact-label">Hours</div>
+              <div class="contact-value">24/7 Available</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form" id="contactFormWrapper">
+          <h3>Send a Message</h3>
+          <form id="contactForm" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="4" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i>
+            <p>Message sent successfully! We'll get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>FaustyPay</h3>
+        <p>Making mobile money payments simple, fast, and secure for everyone in Ghana.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#payment">Pay Now</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Report Issue</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fausty Pay. All rights reserved.</p>
+      <p class="dev-credit">Developer: Otuel Nyarko Emmanuel</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // ===== MOBILE NAV =====
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // ===== URL PARAMS =====
+    const params = new URLSearchParams(window.location.search);
+    const urlAmount = params.get("amount");
+    if (urlAmount) {
+      document.getElementById("amountInput").value = urlAmount;
+    }
+
+    // ===== QR CODE =====
+    function generateQR() {
+      const number = "0257704506";
+      const amt = document.getElementById("amountInput").value || "0";
+      const qrText = `Pay GHC ${amt} to ${number} (MTN MoMo) via Fausty Pay`;
+      const qrContainer = document.getElementById("dynamicQR");
+      qrContainer.innerHTML = "";
+      new QRCode(qrContainer, {
+        text: qrText,
+        width: 160,
+        height: 160,
+        colorDark: "#1a1a2e",
+        colorLight: "#ffffff"
+      });
+    }
+
+    generateQR();
+    document.getElementById("amountInput").addEventListener("input", generateQR);
+
+    // ===== RECEIPT =====
+    function generateReceipt() {
+      const amount = document.getElementById("amountInput").value;
+      if (!amount || amount <= 0) {
+        alert("Please enter an amount first.");
+        return;
+      }
+      const sender = document.getElementById("senderName").value || "Anonymous";
+      const purpose = document.getElementById("purposeInput").value || "Payment";
+      const ref = "FP-" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 6).toUpperCase();
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) +
+        " " + now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+      document.getElementById("receiptAmount").textContent = "GHC " + parseFloat(amount).toFixed(2);
+      document.getElementById("receiptSender").textContent = sender;
+      document.getElementById("receiptPurpose").textContent = purpose;
+      document.getElementById("receiptRef").textContent = ref;
+      document.getElementById("receiptDate").textContent = dateStr;
+
+      document.getElementById("receiptModal").classList.add("active");
+    }
+
+    function closeReceipt() {
+      document.getElementById("receiptModal").classList.remove("active");
+    }
+
+    // Close modal on outside click
+    document.getElementById("receiptModal").addEventListener("click", function(e) {
+      if (e.target === this) closeReceipt();
+    });
+
+    // ===== FAQ TOGGLE =====
+    function toggleFAQ(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // ===== CONTACT FORM =====
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        contactForm.style.display = 'none';
+        document.getElementById('formSuccess').classList.add('active');
+      })
+      .catch(() => {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+
+    // ===== SMOOTH SCROLL for Safari =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
