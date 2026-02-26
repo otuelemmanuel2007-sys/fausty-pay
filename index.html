@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== GENERAL STYLES ===== */
     * {margin:0; padding:0; box-sizing:border-box;}
     html {scroll-behavior: smooth;}
     body {font-family:'Inter', Arial, sans-serif; background:#fffdf5; color:#1a1a2e; line-height:1.6;}
@@ -27,6 +28,7 @@
     .nav-cta:hover {transform:translateY(-1px); box-shadow:0 4px 15px rgba(253,191,0,0.4);}
     .hamburger {display:none; background:none; border:none; font-size:24px; cursor:pointer; color:#1a1a2e;}
 
+    /* ===== HERO ===== */
     .hero {padding:140px 24px 80px; text-align:center; background:linear-gradient(135deg,#fffdf5 0%,#fff8e1 50%,#fff4cc 100%);}
     .hero-badge {display:inline-block; background:rgba(253,191,0,0.15); color:#b38600; padding:6px 16px; border-radius:20px; font-size:14px; font-weight:600; margin-bottom:20px;}
     .hero h1 {font-size:48px; font-weight:800; line-height:1.15; margin-bottom:18px; color:#1a1a2e;}
@@ -37,40 +39,20 @@
     .btn-primary:hover {transform:translateY(-2px); box-shadow:0 8px 25px rgba(253,191,0,0.35);}
     .btn-secondary {display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:white; color:#1a1a2e; text-decoration:none; border-radius:12px; font-weight:700; font-size:16px; border:2px solid #e0e0e0; transition:border-color 0.2s, transform 0.2s; cursor:pointer;}
     .btn-secondary:hover {border-color:#fdbf00; transform:translateY(-2px);}
-    .hero-stats {display:flex; justify-content:center; gap:48px; margin-top:50px; flex-wrap:wrap;}
-    .hero-stat {text-align:center;}
-    .hero-stat .number {font-size:32px; font-weight:800; color:#d4a000;}
-    .hero-stat .label {font-size:14px; color:#888; margin-top:2px;}
-
-    .section {padding:80px 24px;}
-    .section-header {text-align:center; margin-bottom:50px;}
-    .section-header h2 {font-size:36px; font-weight:800; margin-bottom:12px;}
-    .section-header p {font-size:17px; color:#777; max-width:550px; margin:0 auto;}
-    .container {max-width:1100px; margin:0 auto;}
-
-    .services-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;}
-    .service-card {background:#fffdf5; padding:36px 28px; border-radius:18px; border:1px solid #f0ead6; transition:transform 0.3s, box-shadow 0.3s;}
-    .service-card:hover {transform:translateY(-6px); box-shadow:0 12px 35px rgba(0,0,0,0.08);}
-    .service-icon {width:56px; height:56px; background:linear-gradient(135deg,#fdbf00,#ffcc33); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:18px;}
-    .service-card h3 {font-size:20px; font-weight:700; margin-bottom:10px;}
-    .service-card p {color:#777; font-size:15px; line-height:1.6;}
-
+    
     /* ===== PAYMENT SECTION ===== */
     .payment-section {background:linear-gradient(135deg,#fffdf5,#fff4cc);}
     .payment-wrapper {display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; max-width:900px; margin:0 auto;}
     .payment-card {background:white; padding:36px; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.1);}
     .payment-card h3 {font-size:22px; font-weight:700; margin-bottom:6px;}
-    .payment-card .subtitle {color:#888; font-size:14px; margin-bottom:24px;}
-    .recipient-display {background:#fffdf5; border:1.5px solid #f0ead6; border-radius:12px; padding:16px; margin-bottom:20px; display:flex; align-items:center; gap:12px;}
-    .recipient-avatar {width:44px; height:44px; background:linear-gradient(135deg,#fdbf00,#ffcc33); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px;}
-    .recipient-info .name {font-weight:700; font-size:15px;}
-    .recipient-info .number {color:#888; font-size:14px;}
-    .pay-btn {display:block; width:100%; padding:16px; background:linear-gradient(135deg,#fdbf00,#e6ac00); color:#1a1a2e; border:none; border-radius:12px; font-size:18px; font-weight:700; cursor:pointer; text-align:center; margin-bottom:14px; text-decoration:none;}
-    .pay-btn:hover {transform:translateY(-2px); box-shadow:0 6px 20px rgba(253,191,0,0.35);}
-    
     .network-btn {display:block; width:100%; padding:14px; margin:6px 0; border-radius:10px; background:linear-gradient(135deg,#fdbf00,#ffcc33); color:#1a1a2e; text-decoration:none; text-align:center; font-weight:700; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s;}
     .network-btn:hover {transform:translateY(-1px); box-shadow:0 4px 15px rgba(253,191,0,0.4);}
-
+    .pay-btn {display:block; width:100%; padding:16px; background:linear-gradient(135deg,#fdbf00,#e6ac00); color:#1a1a2e; border:none; border-radius:12px; font-size:18px; font-weight:700; cursor:pointer; text-align:center; margin-bottom:14px;}
+    .pay-btn:hover {transform:translateY(-2px); box-shadow:0 6px 20px rgba(253,191,0,0.35);}
+    input[type=text], input[type=number] {width:100%; padding:12px; margin:6px 0 18px; border-radius:8px; border:1px solid #e0e0e0; font-size:15px;}
+    
+    .contact-info {background:#fff8e1; padding:12px; border-radius:12px; margin-top:10px; text-align:center; font-weight:600; color:#1a1a2e;}
+    
     /* Footer */
     footer {text-align:center; padding:20px 0; color:#555; font-size:14px; background:linear-gradient(135deg,#fff8e1,#fffdf5); margin-top:50px; border-top:1px solid #f0ead6;}
     footer strong {color:#d4a000;}
@@ -136,7 +118,9 @@
           <label for="purposeInput">Purpose (optional)</label>
           <input type="text" id="purposeInput" placeholder="e.g. Payment for goods">
 
-          <button class="pay-btn" onclick="generateReceipt()"><i class="fas fa-receipt"></i> Generate Receipt</button>
+          <div class="contact-info">Recipient Contact: <strong>0257704506</strong> (Copy & Paste in USSD)</div>
+
+          <button class="pay-btn" onclick="generateReceipt()"><i class="fas fa-receipt"></i> Send Receipt via SMS</button>
         </div>
 
         <div class="payment-info">
@@ -179,7 +163,11 @@
       const sender = document.getElementById('senderName').value || '-';
       const amount = document.getElementById('amountInput').value || '0.00';
       const purpose = document.getElementById('purposeInput').value || '-';
-      alert(`Receipt Generated!\nSender: ${sender}\nAmount: GHC ${amount}\nPurpose: ${purpose}`);
+      const recipient = '0257704506';
+      const message = `Receipt:\nSender: ${sender}\nAmount: GHC ${amount}\nPurpose: ${purpose}\nRecipient: ${recipient}`;
+
+      // Open SMS app with prefilled message
+      window.location.href = `sms:${recipient}?body=${encodeURIComponent(message)}`;
     }
   </script>
 </body>
